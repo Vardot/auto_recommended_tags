@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Contains of auto_recommended_tags.module.
+ */
+
 /**
  * Implements hook_library_info_build().
  */
@@ -6,10 +12,10 @@ function auto_recommended_tags_library_info_alter(&$libraries, $extension) {
   $config = Drupal::config('auto_recommended_tags.settings');
   // Add a library whose information changes depending on certain conditions.
   if ($config->get('stanbol_socket_url')) {
-    $url = rtrim($config->get('stanbol_socket_url'),"/");
+    $url = rtrim($config->get('stanbol_socket_url'), "/");
     $libraries['socket-io'] = [
       'js' => [
-        $url."/socket.io/socket.io.js" => [],
+        $url . "/socket.io/socket.io.js" => [],
       ],
     ];
   }

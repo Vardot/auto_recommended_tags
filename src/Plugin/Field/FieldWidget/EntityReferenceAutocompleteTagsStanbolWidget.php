@@ -6,13 +6,15 @@ use Drupal;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget;
+
 /**
- * Plugin implementation of the 'entity_reference_autocomplete_tags_stanbol' widget.
+ * Plugin implementation of 'entity_reference_autocomplete_tags_stanbol' widget.
  *
  * @FieldWidget(
  *   id = "entity_reference_autocomplete_tags_stanbol",
  *   label = @Translation("Autocomplete (Tags style) With Stanbol Suggestions"),
- *   description = @Translation("An autocomplete text field with tagging support and Stanbol Suggestions."),
+ *   description = @Translation("An autocomplete text field with tagging support
+ *                 and Stanbol Suggestions."),
  *   field_types = {
  *     "entity_reference"
  *   },
@@ -29,7 +31,7 @@ class EntityReferenceAutocompleteTagsStanbolWidget extends EntityReferenceAutoco
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     $selection_settings = $this->getFieldSetting('handler_settings') + ['match_operator' => $this->getSetting('match_operator')];
-    
+
     $element['target_id']['#tags'] = TRUE;
     $element['target_id']['#default_value'] = $items->referencedEntities();
     $element['target_id']['#suffix'] = '<div class="stanbol-tags-suggestions"></div>';
@@ -40,11 +42,11 @@ class EntityReferenceAutocompleteTagsStanbolWidget extends EntityReferenceAutoco
       ),
       'drupalSettings' => array(
         'auto_recommended_tags' => array(
-          'stanbol_socket_url' => rtrim($config->get('stanbol_socket_url'),"/"),
+          'stanbol_socket_url' => rtrim($config->get('stanbol_socket_url'), "/"),
           'fields_selector' => $config->get('fields_selector'),
-          'show_groups' => $config->get('show_groups')
-        )
-      )
+          'show_groups' => $config->get('show_groups'),
+        ),
+      ),
     );
 
     return $element;
