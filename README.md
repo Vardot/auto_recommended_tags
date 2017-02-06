@@ -25,10 +25,13 @@ _This video has been made after installing this module with 
  [https://hub.docker.com/r/vardot/stanbol-nodejs/]
 (https://hub.docker.com/r/vardot/stanbol-nodejs/) to easily setup Apache Stanbol
 with Node.js Socket.IO.  
-  
-Simply run this command 
 
-docker pull vardot/stanbol-nodejs
+#### Installing Apache Stanbol + Socket.IO through Docker
+1. Make sure you have Docker and Docker Compose installed.
+2. Clone the Apache Stanbol with Node.js Socket.IO Docker image files: `git clone https://github.com/Vardot/docker-stanbol-nodejs.git`.
+3. Run this command `docker-compose up -d` to run the container in the background.
+4. Your Apache Stanbol Socket URL will bt: `http://MYHOSTNAME:8071`. Put that in the module configuration.
+
 
 #### This module is sponsored and developed by [Vardot](http://www.vardot.com/).
 
