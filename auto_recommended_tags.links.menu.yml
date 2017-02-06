@@ -1,6 +1,6 @@
 auto_recommended_tags.admin:
-  title: 'Auto recommended tags'
-  description: 'Auto recommended tags settings'
-  parent: system.admin_config_content
+  title: 'Auto Recommended Content Tags'
+  description: 'Configure Auto Recommended Content Tags service URL and other settings.'
+  parent: system.admin_config_services
   route_name: auto_recommended_tags.settings
   weight: 100
