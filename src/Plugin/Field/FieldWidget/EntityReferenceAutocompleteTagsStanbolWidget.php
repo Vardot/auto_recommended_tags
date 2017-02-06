@@ -12,9 +12,8 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget
  *
  * @FieldWidget(
  *   id = "entity_reference_autocomplete_tags_stanbol",
- *   label = @Translation("Autocomplete (Tags style) With Stanbol Suggestions"),
- *   description = @Translation("An autocomplete text field with tagging support
- *                 and Stanbol Suggestions."),
+ *   label = @Translation("Autocomplete (Tags style) with Apache Stanbol suggestions"),
+ *   description = @Translation("An autocomplete text field with tagging support, with an option of Apache Stanbol suggestions."),
  *   field_types = {
  *     "entity_reference"
  *   },
