@@ -1,7 +1,7 @@
 auto_recommended_tags.settings:
-  path: '/admin/structure/auto_recommended_tags/settings'
+  path: 'admin/config/services/auto_recommended_tags'
   defaults:
     _form: '\Drupal\auto_recommended_tags\Form\AutoRecommendedTagsSettingsForm'
-    _title: 'Auto recommended tags settings'
+    _title: 'Auto Recommended Content Tags settings'
   requirements:
     _permission: 'administer auto recommended tags settings'
