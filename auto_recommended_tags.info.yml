@@ -1,6 +1,7 @@
 name: Auto Recommend Content Tags
 description: This module hooks with Apache Stanbol via a web socket to provide real-time tags recommendations when adding/editing content.
-package: Stanbol
+package: Web services
 type: module
-version: 1.0
 core: 8.x
+dependencies:
+  - taxonomy
