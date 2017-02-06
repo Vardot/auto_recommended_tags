@@ -33,23 +33,23 @@ class AutoRecommendedTagsSettingsForm extends ConfigFormBase {
 
     $form['stanbol_socket_url'] = array(
       '#type' => 'textfield',
-      '#title' => $this->t('Stanbol socket url'),
+      '#title' => $this->t('Apache Stanbol socket URL'),
       '#default_value' => $config->get('stanbol_socket_url'),
-      "#description" => $this->t('The url and port for the socket.io connector'),
+      "#description" => $this->t('The URL and port for the Socket.IO connector. For more information, see the <a href="https://www.drupal.org/project/auto_recommended_tags">module page</a> for installing Apache Stanbol with Socket.IO using a Docker container.'),
     );
 
     $form['fields_selector'] = array(
       '#type' => 'textfield',
-      '#title' => $this->t('Field Selectors'),
+      '#title' => $this->t('Field selectors'),
       '#default_value' => $config->get('fields_selector'),
-      "#description" => $this->t('CSS selectors of the fields that shall be analyzed by stanbol to return tags, e.g (#body, input.article-title, ...)'),
+      "#description" => $this->t('CSS selectors of the fields to be analyzed by Apache Stanbol to recommend tags. Example: (#body, input.article-title, ...)'),
     );
 
     $form['show_groups'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Show grouped tags'),
       '#default_value' => $config->get('show_groups'),
-      "#description" => $this->t('Show tags in groups'),
+      "#description" => $this->t('Show tags in grouped entities as returned by Apache Stanbol. If unchecked, tags will be flattened.'),
     );
 
     return parent::buildForm($form, $form_state);
