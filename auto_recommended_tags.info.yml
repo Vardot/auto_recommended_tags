@@ -3,5 +3,6 @@ description: This module hooks with Apache Stanbol via a web socket to provide r
 package: Web services
 type: module
 core: 8.x
+configure: auto_recommended_tags.settings
 dependencies:
   - taxonomy
