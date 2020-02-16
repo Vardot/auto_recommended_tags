@@ -1,8 +1,9 @@
 name: Auto Recommend Content Tags
 description: This module hooks with Apache Stanbol via a web socket to provide real-time tags recommendations when adding/editing content.
-package: Web services
 type: module
 core: 8.x
+package: Web services
+project: auto_recommended_tags
 configure: auto_recommended_tags.settings
 dependencies:
-  - taxonomy
+  - drupal:taxonomy
