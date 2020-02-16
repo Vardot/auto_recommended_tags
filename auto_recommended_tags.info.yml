@@ -5,5 +5,6 @@ core: 8.x
 package: Web services
 project: auto_recommended_tags
 configure: auto_recommended_tags.settings
+core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:taxonomy

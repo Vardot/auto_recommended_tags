@@ -29,24 +29,22 @@ class EntityReferenceAutocompleteTagsStanbolWidget extends EntityReferenceAutoco
     $config = Drupal::config('auto_recommended_tags.settings');
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
-    $selection_settings = $this->getFieldSetting('handler_settings') + ['match_operator' => $this->getSetting('match_operator')];
-
     $element['target_id']['#tags'] = TRUE;
     $element['target_id']['#default_value'] = $items->referencedEntities();
     $element['target_id']['#suffix'] = '<div class="stanbol-tags-suggestions"></div>';
-    $element['target_id']['#attached'] = array(
-      'library' => array(
+    $element['target_id']['#attached'] = [
+      'library' => [
         'auto_recommended_tags/socket-io',
         'auto_recommended_tags/stanbol-tag-suggestions',
-      ),
-      'drupalSettings' => array(
-        'auto_recommended_tags' => array(
+      ],
+      'drupalSettings' => [
+        'auto_recommended_tags' => [
           'stanbol_socket_url' => rtrim($config->get('stanbol_socket_url'), "/"),
           'fields_selector' => $config->get('fields_selector'),
           'show_groups' => $config->get('show_groups'),
-        ),
-      ),
-    );
+        ],
+      ],
+    ];
 
     return $element;
   }
