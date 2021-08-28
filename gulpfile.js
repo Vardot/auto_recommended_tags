@@ -1,36 +1,35 @@
-let gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  postcss = require('gulp-postcss'),
-  csscomb = require('gulp-csscomb'),
-  autoprefixer = require('autoprefixer'),
-  del = require('del'),
-  browserSync = require('browser-sync').create();
+const gulp = require("gulp"),
+  sass = require("gulp-sass"),
+  postcss = require("gulp-postcss"),
+  csscomb = require("gulp-csscomb"),
+  autoprefixer = require("autoprefixer"),
+  browserSync = require("browser-sync").create();
 
 const paths = {
   scss: {
-    src: 'scss/*.scss',
-    dest: 'css',
-    watch: 'scss/*.scss'
-  },
+    src: "scss/**/*.scss",
+    dest: "css",
+    watch: "scss/**/*.scss"
+  }
 };
 
 // Compile sass into CSS & auto-inject into browsers
-function compile () {
-  var sassOptions = {
-    outputStyle: 'expanded',
-    indentType: 'space',
+function compile() {
+  const sassOptions = {
+    outputStyle: "expanded",
+    indentType: "space",
     indentWidth: 2,
-    linefeed: 'lf'
+    linefeed: "lf"
   };
 
-  return gulp.src([paths.scss.src])
-    .pipe(sass(sassOptions).on('error', sass.logError))
+  return gulp
+    .src([paths.scss.src])
+    .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(csscomb())
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(browserSync.stream());
 }
-
 
 // Watching scss files.
 function watch() {
