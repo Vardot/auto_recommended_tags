@@ -2,7 +2,6 @@
 
 namespace Drupal\auto_recommended_tags\Plugin\Field\FieldWidget;
 
-use Drupal;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\EntityReferenceAutocompleteWidget;
@@ -26,7 +25,7 @@ class EntityReferenceAutocompleteTagsStanbolWidget extends EntityReferenceAutoco
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $config = Drupal::config('auto_recommended_tags.settings');
+    $config = \Drupal::config('auto_recommended_tags.settings');
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     $element['target_id']['#tags'] = TRUE;

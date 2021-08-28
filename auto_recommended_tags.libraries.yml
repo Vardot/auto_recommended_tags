@@ -1,10 +1,9 @@
 stanbol-tag-suggestions:
-  version: 1.x
   js:
-    js/auto_recommended_tags_suggestions.js: {}
+    js/auto_recommended_tags_suggestions.js: { }
   css:
-      theme:
-        css/auto_recommended_tags_suggestions.css: {}
+    theme:
+      css/suggestions.auto_recommended_tagsa.admin.css: { }
   dependencies:
     - core/jquery
     - core/drupalSettings

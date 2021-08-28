@@ -1,0 +1,14 @@
+.stanbol-tags-suggestions {
+  span.tag {
+    display: inline-block;
+    padding: 5px;
+    background: #f0f0f0;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  span.tag:hover {
+    background: #d0d0f0;
+  }
+}

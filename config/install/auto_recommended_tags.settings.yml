@@ -1,4 +1,4 @@
 stanbol_socket_url: "http://127.0.0.1:8071"
 fields_selector: ".body, .title"
 show_groups: false
-langcode: 'en'
+langcode: "en"

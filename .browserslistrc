@@ -1,0 +1,12 @@
+# https://github.com/browserslist/browserslist#readme
+
+> 1%
+chrome >= 35
+firefox >= 38
+edge >= 12
+ie >= 10
+ios >= 8
+safari >= 8
+android 2.3
+android >= 4
+opera >= 12
