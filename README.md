@@ -1,6 +1,6 @@
 # Auto Recommend Content Tags (Thru Apache Stanbol)
 
-Drupal 8/9 + [Apache Stanbol](https://stanbol.apache.org/) +
+Drupal 9 + [Apache Stanbol](https://stanbol.apache.org/) +
 [Socket.IO](http://socket.io/) = Auto Recommend Content Tags!
 
 This module utilizes Apache Stanbol to suggest tags, or search keywords while
