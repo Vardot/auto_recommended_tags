@@ -14,5 +14,5 @@
 - [ ] Full testing and approval
 - [ ] Credit contributors
 - [ ] Review with the product owner
-- [ ] Release Notes
+- [ ] Release notes snippet
 - [ ] Release
