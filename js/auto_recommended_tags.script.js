@@ -3,12 +3,12 @@
  * Contains the definition of the behaviour stanbol tags javascript handler.
  */
 
-(function($, Drupal, drupalSettings) {
+(function ($, Drupal, drupalSettings) {
   /**
    * Attaches the JS test behavior to to weight div.
    */
   Drupal.behaviors.autoRecommendedTags = {
-    attach: function() {
+    attach() {
       let timeout;
 
       if (!drupalSettings.auto_recommended_tags) {
@@ -24,9 +24,9 @@
       const socket = io(
         drupalSettings.auto_recommended_tags.stanbol_socket_url
       );
-      const loadTags = function() {
+      const loadTags = function () {
         $(".stanbol-tags-suggestions").html("<span>Loading tags...</span>");
-        socket.emit("stanbol", { text: this.getData() }, function(data) {
+        socket.emit("stanbol", { text: this.getData() }, function (data) {
           if (data && data.tags) {
             if (drupalSettings.auto_recommended_tags.show_groups) {
               if (data && data.groupedTags) {
@@ -39,24 +39,14 @@
                 for (const gid in data.groupedTags) {
                   var tags = data.groupedTags[gid];
                   $(".stanbol-tags-suggestions .grouped-tags").append(
-                    "<div data-name='" +
-                      gid.toLowerCase() +
-                      "' class='group'><label class='group-title'>" +
-                      gid +
-                      "</label></div>"
+                    `<div data-name='${gid.toLowerCase()}' class='group'><label class='group-title'>${gid}</label></div>`
                   );
                   for (var id in tags) {
                     var tag = tags[id];
                     $(
-                      ".stanbol-tags-suggestions .grouped-tags .group[data-name='" +
-                        gid.toLowerCase() +
-                        "']"
+                      `.stanbol-tags-suggestions .grouped-tags .group[data-name='${gid.toLowerCase()}']`
                     ).append(
-                      "<span data-name='" +
-                        id +
-                        "' class='tag'>" +
-                        tag +
-                        "</span>"
+                      `<span data-name='${id}' class='tag'>${tag}</span>`
                     );
                   }
                 }
@@ -72,7 +62,7 @@
               for (var id in tags) {
                 var tag = tags[id];
                 $(".stanbol-tags-suggestions .flat-tags").append(
-                  "<span data-name='" + id + "' class='tag'>" + tag + "</span>"
+                  `<span data-name='${id}' class='tag'>${tag}</span>`
                 );
               }
             }
@@ -84,7 +74,7 @@
       if (drupalSettings.auto_recommended_tags.fields_selector) {
         $(drupalSettings.auto_recommended_tags.fields_selector)
           .off("keyup blur change")
-          .on("keyup blur change", function() {
+          .on("keyup blur change", function () {
             if (!$(this).val()) {
               return $(".stanbol-tags-suggestions").html("");
             }
@@ -95,10 +85,10 @@
           });
       }
       if (CKEDITOR) {
-        CKEDITOR.on("instanceReady", function(evt) {
+        CKEDITOR.on("instanceReady", function (evt) {
           const instance = evt.editor;
           timeout = setTimeout(loadTags.bind(instance), 500);
-          instance.on("change", function() {
+          instance.on("change", function () {
             if (!this.getData()) {
               return $(".stanbol-tags-suggestions").html("");
             }
@@ -112,20 +102,20 @@
 
       $(".stanbol-tags-suggestions")
         .off("click")
-        .on("click", function(evt) {
+        .on("click", function (evt) {
           if (evt && evt.target && $(evt.target).is(".tag")) {
             const autoCompleteElement = $(".stanbol-tags-suggestions")
               .parent()
               .find("input.form-autocomplete");
             let value = autoCompleteElement.val();
             if (value) {
-              value += ", " + $(evt.target).text();
+              value += `, ${$(evt.target).text()}`;
             } else {
               value = $(evt.target).text();
             }
             autoCompleteElement.val(value);
           }
         });
-    }
+    },
   };
 })(jQuery, Drupal, drupalSettings);
