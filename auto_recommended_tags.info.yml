@@ -1,7 +1,7 @@
 name: "Auto Recommend Content Tags"
 description: "This module hooks with Apache Stanbol via a web socket to provide real-time tags recommendations when adding/editing content."
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 package: "Web services"
 configure: auto_recommended_tags.settings
 dependencies:

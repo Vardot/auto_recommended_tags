@@ -23,6 +23,6 @@
     }
   },
   "require": {
-    "drupal/core": "^9"
+    "drupal/core": "^9 || ^10"
   }
 }
