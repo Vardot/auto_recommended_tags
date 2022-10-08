@@ -21,6 +21,9 @@ class AutoRecommendedTagsSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   A config factory for retrieving required config objects.
    */
   public function __construct(ConfigFactoryInterface $config_factory) {
     $this->configFactory = $config_factory;
