@@ -18,7 +18,7 @@
     "phpcs": "phpcs --standard=./.phpcs.xml .",
     "phpcbf": "phpcbf --standard=./.phpcs.xml .",
     "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json --ext .yml .",
-    "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json .",
+    "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json --ext .js .",
     "lint:css": "npx stylelint --config=.stylelintrc.json .",
     "theme:init": "gulp",
     "theme:build": "gulp compile",
@@ -87,46 +87,45 @@
     "underscore": "^1.13.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.4.0"
-   },
-   "//": "'development is the default environment, and legacy is for transpiling the old jQuery codebase",
-   "babel": {
-     "env": {
-       "development": {
-         "presets": [
-           [
-             "@babel/preset-env",
-             {
-               "modules": "commonjs",
-               "targets": {
-                 "node": "current"
-               }
-             }
-           ]
-         ]
-       },
-       "legacy": {
-         "presets": [
-           [
-             "@babel/preset-env",
-             {
-               "modules": false
-             }
-           ]
-         ]
-       }
-     }
-   },
-   "browserslist": [
-     "last 2 Chrome major versions",
-     "last 2 Firefox major versions",
-     "last 2 Safari major versions",
-     "last 2 Edge major versions",
-     "last 2 Opera versions",
-     "last 2 iOS major versions",
-     "last 1 Explorer major version",
-     "last 1 ChromeAndroid version",
-     "last 1 UCAndroid version",
-     "last 1 Samsung version",
-     "Firefox ESR"
-   ]
- }
+  },
+  "//": "'development is the default environment, and legacy is for transpiling the old jQuery codebase",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": "commonjs",
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      },
+      "legacy": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "browserslist": [
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 Opera versions",
+    "last 2 iOS major versions",
+    "last 1 ChromeAndroid version",
+    "last 1 UCAndroid version",
+    "last 1 Samsung version",
+    "Firefox ESR"
+  ]
+}

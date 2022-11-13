@@ -11,3 +11,10 @@ config/**/*.yml
 *.svg
 *.ico
 *.json
+*.js
+*.php
+*.md
+*.txt
+*.module
+*.install
+*.lock
